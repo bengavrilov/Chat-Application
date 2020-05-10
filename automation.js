@@ -1,7 +1,7 @@
 
 // call this every time you send a message
 function updateScroll () {
-    var element = document.getElementById('mainpage');
+    var element = document.getElementById('messagebank');
     element.scrollTop = element.scrollHeight;
     console.log("worked");
 }
@@ -18,13 +18,13 @@ function sendMessage () {
 
         var newDiv = document.createElement('div');
         newDiv.id = 'message' + numOfMessages.toString();
-        newDiv.className = 'awaymessage';
+        newDiv.className = 'homemessage';
 
         messageBank.appendChild(newDiv);
 
         var newDiv2 = document.createElement('div');
         newDiv2.id = 'favicon' + numOfMessages.toString();
-        newDiv2.className = 'circle messagefaviconaway';
+        newDiv2.className = 'circle messagefaviconhome';
 
         newDiv.appendChild(newDiv2);
 
@@ -34,13 +34,13 @@ function sendMessage () {
         newDiv2.appendChild(newHeader);
 
         var newHeader2 = document.createElement('h4');
-        newHeader2.className = 'nameaway';
+        newHeader2.className = 'namehome';
         newHeader2.innerHTML = 'Ben Gavrilov';
 
         newDiv.appendChild(newHeader2);
 
         var newHeader3 = document.createElement('h4');
-        newHeader3.className = 'actualmessageaway';
+        newHeader3.className = 'actualmessagehome';
         newHeader3.innerHTML = txt;
 
         newDiv.appendChild(newHeader3);
