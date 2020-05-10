@@ -39,6 +39,16 @@
     background-color: rgba(201, 195, 195, 0.5);
 }
 
+.messagebank {
+    position: absolute;
+    /*background-color: violet;*/
+    top: 66px;
+    width: 98%;
+    height: 68%;
+    padding: 10px 10px 10px 10px;
+    overflow-y: scroll;
+}
+
 .header h1 {
     font-family: 'Comic Sans MS', sans-serif;
     left: 15px;
@@ -63,7 +73,7 @@
 .sendmess {
     position: absolute;
     left: 88%;
-    top: 1%;
+    top: 10%;
     width: 10%;
     height: 93%;
     background-color: rgb(201, 195, 195);
@@ -72,7 +82,6 @@
     background-repeat: no-repeat;
     outline: none;
     border: none;
-    
 }
 
 .sendmess:hover {
@@ -91,7 +100,7 @@
 }
 
 .subchat {
-    background-color: rgb(201, 195, 195);
+    background-color: white;
     width: 100px;
     height: 50px;
     margin: 0 auto;
@@ -110,4 +119,87 @@
     border-radius: 50%;
     width: 50px;
     height: 50px;
+}
+
+.messagefaviconaway {
+    background-color: white;
+    float: left;
+}
+
+.messagefaviconhome {
+    right: 20px;
+    background-color: white;
+    float: right;
+}
+
+.messagefaviconhome h4 {
+    position: relative;
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.messagefaviconaway h4 {
+    position: relative;
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.awaymessage {
+    /*background-color: yellow;*/
+    height: 100px;
+    width: 100%;
+    margin-top: 0px;
+}
+
+.homemessage {
+    /*background-color: yellow;*/
+    height: 100px;
+    width: 100%;
+    margin-top: 0px;
+}
+
+.nameaway {
+    float: left;
+    margin-top: 15px;
+    margin-left: 10px;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.namehome {
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.actualmessageaway {
+    position: absolute;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 15px;
+    /*background-color: rgb(0, 153, 255);
+    border: 5px solid rgb(0, 153, 255);*/
+    background-color: white;
+    border: 5px solid white;
+    border-radius: 9px;
+    color: black;
+    left: 28px;
+    margin-top: 58px;
+}
+
+.actualmessagehome {
+    position: absolute;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 15px;
+    /*background-color: rgb(0, 153, 255);
+    border: 5px solid rgb(0, 153, 255);*/
+    background-color: rgb(0, 153, 255);
+    border: 5px solid rgb(0, 153, 255);
+    border-radius: 9px;
+    color: white;
+    right: 28px;
+    margin-top: 58px;
 }
