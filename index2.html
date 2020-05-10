@@ -32,7 +32,7 @@
                 <div class="header">
                     <h1>chat123</h1>
                 </div>
-                <div class="messagebank">
+                <div class="messagebank" id="messagebank">
                     <div class="awaymessage">
                         <div class="circle messagefaviconaway">
                             <h4>BG</h4>
@@ -47,59 +47,10 @@
                         <h4 class="namehome">Alanna Feldman</h4>
                         <h4 class="actualmessagehome">Hey my name is Lanski!</h4>
                     </div>
-                    <div class="awaymessage">
-                        <div class="circle messagefaviconaway">
-                            <h4>BG</h4>
-                        </div>
-                        <h4 class="nameaway">Ben Gavrilov</h4>
-                        <h4 class="actualmessageaway">Send utter pics</h4>
-                    </div>
-                    <div class="homemessage">
-                        <div class="circle messagefaviconhome">
-                            <h4>AF</h4>
-                        </div>
-                        <h4 class="namehome">Alanna Feldman</h4>
-                        <h4 class="actualmessagehome">neh I'm telling jared</h4>
-                    </div>
-                    <div class="awaymessage">
-                        <div class="circle messagefaviconaway">
-                            <h4>BG</h4>
-                        </div>
-                        <h4 class="nameaway">Ben Gavrilov</h4>
-                        <h4 class="actualmessageaway">Send utter pics</h4>
-                    </div>
-                    <div class="homemessage">
-                        <div class="circle messagefaviconhome">
-                            <h4>AF</h4>
-                        </div>
-                        <h4 class="namehome">Alanna Feldman</h4>
-                        <h4 class="actualmessagehome">neh I'm telling jared</h4>
-                    </div>
-                    <div class="awaymessage">
-                        <div class="circle messagefaviconaway">
-                            <h4>BG</h4>
-                        </div>
-                        <h4 class="nameaway">Ben Gavrilov</h4>
-                        <h4 class="actualmessageaway">Send utter pics</h4>
-                    </div>
-                    <div class="awaymessage">
-                        <div class="circle messagefaviconaway">
-                            <h4>BG</h4>
-                        </div>
-                        <h4 class="nameaway">Ben Gavrilov</h4>
-                        <h4 class="actualmessageaway">Send utter pics</h4>
-                    </div>
-                    <div class="awaymessage">
-                        <div class="circle messagefaviconaway">
-                            <h4>BG</h4>
-                        </div>
-                        <h4 class="nameaway">Ben Gavrilov</h4>
-                        <h4 class="actualmessageaway">Send utter pics</h4>
-                    </div>
                 </div>
                 <div class="messenger">
                     <input class="typer" type="text" id="messenger" placeholder="Enter message here..." maxlength="95">
-                    <button class="sendmess" id="sendmessage"></button>
+                    <button class="sendmess" id="sendmessage" onclick="sendMessage()"></button>
                 </div>
             </div>
         </div>
