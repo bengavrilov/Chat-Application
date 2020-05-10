@@ -45,6 +45,7 @@
     top: 0;
     text-align: center;
     background-color: rgba(201, 195, 195, 0.5);
+    border-bottom: 1px solid black;
 }
 
 .messenger input {
