@@ -13,8 +13,73 @@
     position: absolute;
     background-color: rgb(248, 102, 4);
     left: 0px;
-    width: 120px;
+    width: 12%;
     height: 100%;
+}
+
+.chat {
+    position: absolute;
+    left: 12%;
+    width: 88%;
+    height: 100%;
+}
+
+.messenger {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 20%;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 0px;
+    background-color: rgba(201, 195, 195, 0.5);
+}
+
+.header h1 {
+    font-family: 'Comic Sans MS', sans-serif;
+    left: 15px;
+    top: 0;
+    text-align: center;
+    background-color: rgba(201, 195, 195, 0.5);
+}
+
+.messenger input {
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    width: 85%;
+    height: 90%;
+    border: 2px solid black;
+    border-radius: 8px;
+    outline: none;
+    font-size: 18px;
+}
+
+.sendmess {
+    position: absolute;
+    left: 88%;
+    top: 1%;
+    width: 10%;
+    height: 93%;
+    background-color: rgb(201, 195, 195);
+    background-image: url("sendbutton.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    outline: none;
+    border: none;
+    
+}
+
+.sendmess:hover {
+    background-image: url("sendbutton2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    outline: none;
+    border: none;
 }
 
 .accessbaritem h3 {
