@@ -1,0 +1,25 @@
+{
+  "name": "chat-application",
+  "version": "1.0.0",
+  "description": "connect with users on web server",
+  "main": "automation.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bengavrilov/Chat-Application.git"
+  },
+  "author": "Ben Gavrilov (ben.gavrilov@mail.utoronto.ca)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bengavrilov/Chat-Application/issues"
+  },
+  "homepage": "https://github.com/bengavrilov/Chat-Application#readme",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

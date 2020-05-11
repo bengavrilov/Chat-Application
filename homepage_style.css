@@ -16,6 +16,7 @@
     transform: translateY(-10%);
     width: 400px;
     height: 70px;
+    background-color: rgb(201, 195, 195);
 }
 
 .homepagetitle h1 {
@@ -28,7 +29,7 @@
 .homemenu {
     background-color: rgb(248, 102, 4);
     width: 300px;
-    height: 400px;
+    height: 300px;
     border-radius: 8px;
     display: inline-block;
     margin: 0 auto;
@@ -68,6 +69,7 @@
     background-color: rgb(39, 37, 37);
     color: white;
     font-size: 15px;
+    margin: 0 auto;
 }
 
 .menuentry button:hover {
@@ -76,7 +78,5 @@
 }
 
 .bottombuttons {
-    position: absolute;
-    bottom: 10%;
-    left: 12.5%;
+    margin-top: 28px;
 }

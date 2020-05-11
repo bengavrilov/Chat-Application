@@ -1,4 +1,4 @@
-
+/*
 // call this every time you send a message
 function updateScroll () {
     var element = document.getElementById('messagebank');
@@ -50,3 +50,4 @@ function sendMessage () {
         updateScroll();
     }
 }
+*/

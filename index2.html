@@ -3,6 +3,10 @@
     <head>
         <link rel="stylesheet" href="mainpage_style.css">
         <script defer src="automation.js"></script>
+
+        <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script defer src="script.js"></script>
+
         <title>Chatform</title>
         <link rel="shortcut icon" type="image/png" href="favicon.png">
     </head>
@@ -12,45 +16,58 @@
                 <div class="accessbaritem">
                     <h3>Active chats:</h3>
                     <div class="subchat">
-                        <h4>chat123</h4>
+                        <h4>Lobby</h4>
                     </div>
                 </div>
                 <div class="accessbaritem">
                     <h3>Name:</h3>
                     <div class="subchat">
-                        <h4>Ben Gavrilov</h4>
+                        <h4 id="bar-name"></h4>
                     </div>
                 </div>
                 <div class="accessbaritem">
                     <h3>Favicon:</h3>
                     <div class="subchat circle">
-                        <h4>BG</h4>
+                        <h4 id="bar-favicon"></h4>
                     </div>
                 </div>
             </div>
             <div class="chat">
                 <div class="header">
-                    <h1>chat123</h1>
+                    <h1>Lobby</h1>
                 </div>
                 <div class="messagebank" id="messagebank">
-                    <div class="awaymessage">
-                        <div class="circle messagefaviconaway">
-                            <h4>BG</h4>
-                        </div>
-                        <h4 class="nameaway">Ben Gavrilov</h4>
-                        <h4 class="actualmessageaway">Hey my name is Ben!</h4>
-                    </div>
-                    <div class="homemessage">
-                        <div class="circle messagefaviconhome">
-                            <h4>AF</h4>
-                        </div>
-                        <h4 class="namehome">Alanna Feldman</h4>
-                        <h4 class="actualmessagehome">Hey my name is Lanski!</h4>
-                    </div>
+
                 </div>
                 <div class="messenger">
                     <input class="typer" type="text" id="messenger" placeholder="Enter message here..." maxlength="95">
                     <button class="sendmess" id="sendmessage" onclick="sendMessage()"></button>
+                </div>
+            </div>
+        </div>
+        <div class="homepage">
+            <div class="homepagetitle">
+                <h1><u>Welcome to Chatform!</u></h1>
+            </div>
+            <div class="homemenu">
+                <div class="menuentry">
+                    <div class="menutitle">
+                        <h3>First Name:*</h1>
+                    </div>
+                    <div class="menuentry">
+                        <input type="text" id="firstName">
+                    </div>
+                </div>
+                <div class="menuentry">
+                    <div class="menutitle">
+                        <h3>Last Name:*</h3>
+                    </div>
+                    <div class="menuentry">
+                        <input type="text" id="lastName">
+                    </div>
+                </div>
+                <div class="menuentry bottombuttons">
+                    <button onclick="enterLobby()">Join lobby</button>
                 </div>
             </div>
         </div>
