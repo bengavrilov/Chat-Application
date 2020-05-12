@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3000');
+const socket = io('https://chat-application-ben.herokuapp.com/');
 
 socket.on('other-client-message', txt => {
     inboundMessage(txt);
