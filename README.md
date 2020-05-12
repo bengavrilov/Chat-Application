@@ -1,4 +1,6 @@
 # Chat-Application
+This is a simple web application that allows clients to join a common cloud hosted server and communicate via websockets. To use the app, go to: https://bengavrilov.github.io/Chat-Application/
+
 <br />
 
 # About #
