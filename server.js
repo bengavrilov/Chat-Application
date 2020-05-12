@@ -23,11 +23,12 @@ io.on('connection', socket => {
         if (array[2].includes(" joined the chat ---") == true) {
             usersOnline++;
             socket.emit('update-user-count', usersOnline);
-            
+            socket.broadcast.emit('update-user-count', usersOnline);
         }
         else if (array[2].includes(" left the chat ---") == true) {
             usersOnline--;
             socket.emit('update-user-count', usersOnline);
+            socket.broadcast.emit('update-user-count', usersOnline);
         }
     })
 })
