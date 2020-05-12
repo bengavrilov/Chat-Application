@@ -6,6 +6,7 @@ socket.on('other-client-message', txt => {
 
 socket.on('update-user-count', usersOnline => {
     document.getElementById('usersOnline').innerHTML = "Current users online: " + usersOnline;
+    document.getElementById('usersOnline2').innerHTML = "Current users online: " + usersOnline;
 })
 
 // call this every time you send a message
