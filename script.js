@@ -4,6 +4,10 @@ socket.on('other-client-message', txt => {
     inboundMessage(txt);
 })
 
+socket.on('update-user-count', usersOnline => {
+    document.getElementById('usersOnline').innerHTML = "Current users online: " + usersOnline;
+})
+
 // call this every time you send a message
 function updateScroll () {
     var element = document.getElementById('messagebank');
