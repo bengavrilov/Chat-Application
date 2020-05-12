@@ -147,6 +147,18 @@ function sendFirstMessage (array) {
     }
 }
 
+function sendLastMessage () {
+    var array = [];
+
+    if (firstNamee.length != 0 && lastNamee.length != 0) {
+        array[0] = firstNamee;
+        array[1] = lastNamee;
+        array[2] = '--- ' + firstNamee + ' left the chat ---';
+
+        socket.emit('client-send-message', array);
+    }
+}
+
 function inboundMessage (array) {
 
     if (array[2].length != 0) {
