@@ -4,7 +4,7 @@
   "description": "connect with users on web server",
   "main": "server.js",
   "scripts": {
-    "devStart": "node server.js"
+    "devStart": "nodemon server.js"
   },
   "repository": {
     "type": "git",
