@@ -2,9 +2,9 @@
   "name": "chat-application",
   "version": "1.0.0",
   "description": "connect with users on web server",
-  "main": "automation.js",
+  "main": "server.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/bengavrilov/Chat-Application#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
