@@ -1,4 +1,4 @@
-const socket = io('https://bengavrilov.github.io/Chat-Application:3000');
+const socket = io('http://localhost:3000');
 
 socket.on('other-client-message', txt => {
     inboundMessage(txt);
