@@ -7,4 +7,4 @@ What's the worlds most sought after resource? An uninterrupted medium for commun
 
 # How? #
 The front end is currently hosted via Github pages.
-The trickier part was to deploy the server as during testing it was only functional on a local host port. To make it usable to everyone via the browser the server must be deployed to a backend server hosting site. My preference: Heroku- This way a cloud backend server can be upheld.
+The trickier part was to deploy the server since during production it was only functional on a local host port. To make it usable to everyone via the browser the server must be deployed to a backend server hosting site. My preference: Heroku- This way a cloud backend server can be upheld.
