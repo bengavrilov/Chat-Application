@@ -20,12 +20,15 @@ var numOfMessages = 0;
 var messageBank = document.getElementById('messagebank');
 var firstNamee;
 var lastNamee;
+var lastMessageMine = false;
+var lastAwayMessage;
 
 
 function sendMessage () {
     var txt = document.getElementById('messenger').value;
     var array = [];
-    if (txt.length != 0) {
+    if (txt.length != 0 && lastMessageMine == false) {
+        lastMessageMine = true;
         array[0] = firstNamee;
         array[1] = lastNamee;
         array[2] = txt;
@@ -57,6 +60,23 @@ function sendMessage () {
 
         var newHeader3 = document.createElement('h4');
         newHeader3.className = 'actualmessagehome';
+        newHeader3.innerHTML = txt;
+
+        newDiv.appendChild(newHeader3);
+
+        document.getElementById('messenger').value = '';
+
+        updateScroll();
+    }
+    else if (txt.length != 0 && lastMessageMine == true) {
+        var newDiv = document.createElement('div');
+        newDiv.id = 'message' + numOfMessages.toString();
+        newDiv.className = 'homemessage2';
+
+        messageBank.appendChild(newDiv);
+
+        var newHeader3 = document.createElement('h4');
+        newHeader3.className = 'actualmessagehome2';
         newHeader3.innerHTML = txt;
 
         newDiv.appendChild(newHeader3);
@@ -70,7 +90,8 @@ function sendMessage () {
 function enterSendMessage (ele) {
     var txt = document.getElementById('messenger').value;
     var array = [];
-    if (txt.length != 0 && event.key == 'Enter') {
+    if (txt.length != 0 && event.key == 'Enter' && lastMessageMine == false) {
+        lastMessageMine = true;
         array[0] = firstNamee;
         array[1] = lastNamee;
         array[2] = txt;
@@ -110,10 +131,35 @@ function enterSendMessage (ele) {
 
         updateScroll();
     }
+    else if (txt.length != 0 && lastMessageMine == true && event.key == 'Enter') {
+        lastMessageMine = true;
+        array[0] = firstNamee;
+        array[1] = lastNamee;
+        array[2] = txt;
+        socket.emit('client-send-message', array);
+        numOfMessages++;
+        
+        var newDiv = document.createElement('div');
+        newDiv.id = 'message' + numOfMessages.toString();
+        newDiv.className = 'homemessage2';
+
+        messageBank.appendChild(newDiv);
+
+        var newHeader3 = document.createElement('h4');
+        newHeader3.className = 'actualmessagehome2';
+        newHeader3.innerHTML = txt;
+
+        newDiv.appendChild(newHeader3);
+
+        document.getElementById('messenger').value = '';
+
+        updateScroll();
+    }
 }
 
 function sendFirstMessage (array) {
     if (array[2].length != 0) {
+        lastMessageMine = true;
         socket.emit('client-send-message', array);
         numOfMessages++;
 
@@ -156,6 +202,7 @@ function sendLastMessage () {
     var array = [];
 
     if (firstNamee.length != 0 && lastNamee.length != 0) {
+        lastMessageMine = true;
         array[0] = firstNamee;
         array[1] = lastNamee;
         array[2] = '--- ' + firstNamee + ' left the chat ---';
@@ -166,7 +213,9 @@ function sendLastMessage () {
 
 function inboundMessage (array) {
 
-    if (array[2].length != 0) {
+    if (array[2].length != 0 && lastMessageMine == true) {
+        lastAwayMessage = array[0] + array[1];
+        lastMessageMine = false;
         numOfMessages++;
 
         var newDiv = document.createElement('div');
@@ -199,6 +248,63 @@ function inboundMessage (array) {
         newDiv.appendChild(newHeader3);
 
         updateScroll();
+    }
+    else if (array[2].length != 0 && lastMessageMine == false) {
+        if ((array[0] + array[1]) == lastAwayMessage) {
+            lastAwayMessage = array[0] + array[1];
+            lastMessageMine = false;
+            numOfMessages++;
+
+            var newDiv = document.createElement('div');
+            newDiv.id = 'message' + numOfMessages.toString();
+            newDiv.className = 'awaymessage2';
+
+            messageBank.appendChild(newDiv);
+
+            var newHeader3 = document.createElement('h4');
+            newHeader3.className = 'actualmessageaway2';
+            newHeader3.innerHTML = array[2];
+
+            newDiv.appendChild(newHeader3);
+
+            updateScroll();
+        }
+        else {
+            lastAwayMessage = array[0] + array[1];
+            lastMessageMine = false;
+            numOfMessages++;
+
+            var newDiv = document.createElement('div');
+            newDiv.id = 'message' + numOfMessages.toString();
+            newDiv.className = 'awaymessage';
+
+            messageBank.appendChild(newDiv);
+
+            var newDiv2 = document.createElement('div');
+            newDiv2.id = 'favicon' + numOfMessages.toString();
+            newDiv2.className = 'circle messagefaviconaway';
+
+            newDiv.appendChild(newDiv2);
+
+            var newHeader = document.createElement('h4');
+            newHeader.innerHTML = array[0][0] + array[1][0];
+
+            newDiv2.appendChild(newHeader);
+
+            var newHeader2 = document.createElement('h4');
+            newHeader2.className = 'nameaway';
+            newHeader2.innerHTML = array[0] + ' ' + array[1];
+
+            newDiv.appendChild(newHeader2);
+
+            var newHeader3 = document.createElement('h4');
+            newHeader3.className = 'actualmessageaway';
+            newHeader3.innerHTML = array[2];
+
+            newDiv.appendChild(newHeader3);
+
+            updateScroll();
+        }
     }
 }
 
