@@ -27,6 +27,11 @@ io.on('connection', socket => {
         }
         else if (array[2].includes(" left the chat ---") == true) {
             usersOnline--;
+
+            if (usersOnline < 0) {
+                usersOnline = 0;
+            }
+
             socket.emit('update-user-count', usersOnline);
             socket.broadcast.emit('update-user-count', usersOnline);
         }
