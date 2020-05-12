@@ -62,6 +62,51 @@ function sendMessage () {
     }
 }
 
+function enterSendMessage (ele) {
+    var txt = document.getElementById('messenger').value;
+    var array = [];
+    if (txt.length != 0 && event.key == 'Enter') {
+        array[0] = firstNamee;
+        array[1] = lastNamee;
+        array[2] = txt;
+        socket.emit('client-send-message', array);
+        numOfMessages++;
+
+        var newDiv = document.createElement('div');
+        newDiv.id = 'message' + numOfMessages.toString();
+        newDiv.className = 'homemessage';
+
+        messageBank.appendChild(newDiv);
+
+        var newDiv2 = document.createElement('div');
+        newDiv2.id = 'favicon' + numOfMessages.toString();
+        newDiv2.className = 'circle messagefaviconhome';
+
+        newDiv.appendChild(newDiv2);
+
+        var newHeader = document.createElement('h4');
+        newHeader.innerHTML = firstNamee[0] + lastNamee[0];
+
+        newDiv2.appendChild(newHeader);
+
+        var newHeader2 = document.createElement('h4');
+        newHeader2.className = 'namehome';
+        newHeader2.innerHTML = firstNamee + ' ' + lastNamee;
+
+        newDiv.appendChild(newHeader2);
+
+        var newHeader3 = document.createElement('h4');
+        newHeader3.className = 'actualmessagehome';
+        newHeader3.innerHTML = txt;
+
+        newDiv.appendChild(newHeader3);
+
+        document.getElementById('messenger').value = '';
+
+        updateScroll();
+    }
+}
+
 function sendFirstMessage (array) {
     if (array[2].length != 0) {
         socket.emit('client-send-message', array);
