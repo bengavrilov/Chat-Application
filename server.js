@@ -36,4 +36,5 @@ io.on('connection', socket => {
             socket.broadcast.emit('update-user-count', usersOnline);
         }
     })
+    socket.emit('update-user-count', usersOnline);
 })
