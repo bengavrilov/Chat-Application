@@ -48,7 +48,7 @@ function sendMessage () {
         newDiv.appendChild(newDiv2);
 
         var newHeader = document.createElement('h4');
-        newHeader.innerHTML = firstNamee[0] + lastNamee[0];
+        newHeader.innerHTML = firstNamee[0].toUpperCase() + lastNamee[0].toUpperCase();
 
         newDiv2.appendChild(newHeader);
 
@@ -111,7 +111,7 @@ function enterSendMessage (ele) {
         newDiv.appendChild(newDiv2);
 
         var newHeader = document.createElement('h4');
-        newHeader.innerHTML = firstNamee[0] + lastNamee[0];
+        newHeader.innerHTML = firstNamee[0].toUpperCase() + lastNamee[0].toUpperCase();
 
         newDiv2.appendChild(newHeader);
 
@@ -176,7 +176,7 @@ function sendFirstMessage (array) {
         newDiv.appendChild(newDiv2);
 
         var newHeader = document.createElement('h4');
-        newHeader.innerHTML = array[0][0] + array[1][0];
+        newHeader.innerHTML = array[0][0].toUpperCase() + array[1][0].toUpperCase();
 
         newDiv2.appendChild(newHeader);
 
@@ -231,7 +231,7 @@ function inboundMessage (array) {
         newDiv.appendChild(newDiv2);
 
         var newHeader = document.createElement('h4');
-        newHeader.innerHTML = array[0][0] + array[1][0];
+        newHeader.innerHTML = array[0][0].toUpperCase() + array[1][0].toUpperCase();
 
         newDiv2.appendChild(newHeader);
 
@@ -287,7 +287,7 @@ function inboundMessage (array) {
             newDiv.appendChild(newDiv2);
 
             var newHeader = document.createElement('h4');
-            newHeader.innerHTML = array[0][0] + array[1][0];
+            newHeader.innerHTML = array[0][0].toUpperCase() + array[1][0].toUpperCase();
 
             newDiv2.appendChild(newHeader);
 
@@ -318,7 +318,7 @@ function enterLobby () {
 
         document.querySelector('.homepage').setAttribute("style", "display: none;");
         document.getElementById('bar-name').innerHTML = firstName + ' ' + lastName;
-        document.getElementById('bar-favicon').innerHTML = firstName[0] + lastName[0];
+        document.getElementById('bar-favicon').innerHTML = firstName[0].toUpperCase() + lastName[0].toUpperCase();
 
         var array2 = [];
         array2[0] = firstName;
